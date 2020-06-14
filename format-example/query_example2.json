@@ -1,0 +1,22 @@
+{
+  "query": [
+    {
+      "key": "$filter",
+      "value": null,
+      "description": "string (Optional) Filters the results, based on a boolean condition",
+      "disabled": true
+    },
+    {
+      "key": "$skip",
+      "value": null,
+      "description": "int32 (Optional) Skips the first n results",
+      "disabled": true
+    },
+    {
+      "key": "$top",
+      "value": null,
+      "description": "int32 (Optional) Returns only the first n results",
+      "disabled": true
+    }
+  ]
+}

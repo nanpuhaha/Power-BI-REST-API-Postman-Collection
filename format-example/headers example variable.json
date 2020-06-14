@@ -1,0 +1,14 @@
+{
+  "header": [
+    {
+      "key": "Content-Type",
+      "type": "text",
+      "value": "application/json"
+    },
+    {
+      "key": "Variable",
+      "value": "{{variable}}",
+      "type": "text"
+    }
+  ]
+}

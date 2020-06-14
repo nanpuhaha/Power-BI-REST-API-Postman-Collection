@@ -1,0 +1,21 @@
+{
+  "query": [
+    {
+      "key": "status",
+      "value": "ALL",
+      "description": "\"ALL\", \"SUBSCRIBABLE\", \"UNSUBSCRIBABLE\"; default: 'ALL'"
+    },
+    {
+      "key": "featured",
+      "value": "ALL"
+    },
+    {
+      "key": "timestamp",
+      "value": "{{timestamp}}"
+    },
+    {
+      "key": "signature",
+      "value": "{{signature}}"
+    }
+  ]
+}

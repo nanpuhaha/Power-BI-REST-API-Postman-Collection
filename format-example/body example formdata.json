@@ -1,0 +1,37 @@
+{
+  "body": {
+    "mode": "formdata",
+    "formdata": [
+      {
+        "key": "client_id",
+        "value": "",
+        "type": "text"
+      },
+      {
+        "key": "client_secret",
+        "value": "",
+        "type": "text"
+      },
+      {
+        "key": "scope",
+        "value": "https://graph.microsoft.com/calendars.read",
+        "type": "text"
+      },
+      {
+        "key": "redirect_uri",
+        "value": "https://localhost:1234",
+        "type": "text"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "text"
+      },
+      {
+        "key": "code",
+        "value": "",
+        "type": "text"
+      }
+    ]
+  }
+}
