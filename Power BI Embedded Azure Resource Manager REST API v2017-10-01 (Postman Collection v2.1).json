@@ -1,0 +1,506 @@
+{
+    "info": {
+        "name": "Power BI Embedded Azure Resource Manager REST API v2017-10-01",
+        "description": "This API provides a RESTful set of web services that enables you to create, retrieve, update, and delete Power BI dedicated capacities.\r\n\r\nhttps://docs.microsoft.com/en-us/rest/api/power-bi-embedded/",
+        "version": {
+            "major": 0,
+            "minor": 1,
+            "patch": 0,
+            "identifier": "beta-200620",
+            "meta": "Jangwon Seo"
+        },
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Capacities",
+            "item": [
+                {
+                    "name": "Check Name Availability",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "type": "text",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n\t\"name\": \"\",\n\t\"type\": \"\"\n}"
+                        },
+                        "url": {
+                            "raw": "https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.PowerBIDedicated/locations/{location}/checkNameAvailability?api-version=2017-10-01",
+                            "protocol": "https",
+                            "host": [
+                                "management",
+                                "azure",
+                                "com"
+                            ],
+                            "path": [
+                                "subscriptions",
+                                "{subscriptionId}",
+                                "providers",
+                                "Microsoft.PowerBIDedicated",
+                                "locations",
+                                "{location}",
+                                "checkNameAvailability"
+                            ],
+                            "query": [
+                                {
+                                    "key": "api-version",
+                                    "value": "2017-10-01",
+                                    "description": "string The client API version.",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "description": "<a href='https://docs.microsoft.com/en-us/rest/api/power-bi-embedded/capacities/checknameavailability'>Check Name Availability</a><br><p>Check the name availability in the target location.</p>"
+                    },
+                    "response": [],
+                    "_link": "https://docs.microsoft.com/en-us/rest/api/power-bi-embedded/capacities/checknameavailability"
+                },
+                {
+                    "name": "Create",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "type": "text",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n\t\"location\": \"\",\n\t\"properties.administration\": \"\",\n\t\"sku\": \"\",\n\t\"tags\": \"\"\n}"
+                        },
+                        "url": {
+                            "raw": "https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.PowerBIDedicated/capacities/{dedicatedCapacityName}?api-version=2017-10-01",
+                            "protocol": "https",
+                            "host": [
+                                "management",
+                                "azure",
+                                "com"
+                            ],
+                            "path": [
+                                "subscriptions",
+                                "{subscriptionId}",
+                                "resourceGroups",
+                                "{resourceGroupName}",
+                                "providers",
+                                "Microsoft.PowerBIDedicated",
+                                "capacities",
+                                "{dedicatedCapacityName}"
+                            ],
+                            "query": [
+                                {
+                                    "key": "api-version",
+                                    "value": "2017-10-01",
+                                    "description": "string The client API version.",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "description": "<a href='https://docs.microsoft.com/en-us/rest/api/power-bi-embedded/capacities/create'>Create</a><br><p>Provisions the specified Dedicated capacity based on the configuration specified in the request.</p>"
+                    },
+                    "response": [],
+                    "_link": "https://docs.microsoft.com/en-us/rest/api/power-bi-embedded/capacities/create"
+                },
+                {
+                    "name": "Delete",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "body": {},
+                        "url": {
+                            "raw": "https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.PowerBIDedicated/capacities/{dedicatedCapacityName}?api-version=2017-10-01",
+                            "protocol": "https",
+                            "host": [
+                                "management",
+                                "azure",
+                                "com"
+                            ],
+                            "path": [
+                                "subscriptions",
+                                "{subscriptionId}",
+                                "resourceGroups",
+                                "{resourceGroupName}",
+                                "providers",
+                                "Microsoft.PowerBIDedicated",
+                                "capacities",
+                                "{dedicatedCapacityName}"
+                            ],
+                            "query": [
+                                {
+                                    "key": "api-version",
+                                    "value": "2017-10-01",
+                                    "description": "string The client API version.",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "description": "<a href='https://docs.microsoft.com/en-us/rest/api/power-bi-embedded/capacities/delete'>Delete</a><br><p>Deletes the specified Dedicated capacity.</p>"
+                    },
+                    "response": [],
+                    "_link": "https://docs.microsoft.com/en-us/rest/api/power-bi-embedded/capacities/delete"
+                },
+                {
+                    "name": "Get Details",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "body": {},
+                        "url": {
+                            "raw": "https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.PowerBIDedicated/capacities/{dedicatedCapacityName}?api-version=2017-10-01",
+                            "protocol": "https",
+                            "host": [
+                                "management",
+                                "azure",
+                                "com"
+                            ],
+                            "path": [
+                                "subscriptions",
+                                "{subscriptionId}",
+                                "resourceGroups",
+                                "{resourceGroupName}",
+                                "providers",
+                                "Microsoft.PowerBIDedicated",
+                                "capacities",
+                                "{dedicatedCapacityName}"
+                            ],
+                            "query": [
+                                {
+                                    "key": "api-version",
+                                    "value": "2017-10-01",
+                                    "description": "string The client API version.",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "description": "<a href='https://docs.microsoft.com/en-us/rest/api/power-bi-embedded/capacities/getdetails'>Get Details</a><br><p>Gets details about the specified dedicated capacity.</p>"
+                    },
+                    "response": [],
+                    "_link": "https://docs.microsoft.com/en-us/rest/api/power-bi-embedded/capacities/getdetails"
+                },
+                {
+                    "name": "List",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "body": {},
+                        "url": {
+                            "raw": "https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.PowerBIDedicated/capacities?api-version=2017-10-01",
+                            "protocol": "https",
+                            "host": [
+                                "management",
+                                "azure",
+                                "com"
+                            ],
+                            "path": [
+                                "subscriptions",
+                                "{subscriptionId}",
+                                "providers",
+                                "Microsoft.PowerBIDedicated",
+                                "capacities"
+                            ],
+                            "query": [
+                                {
+                                    "key": "api-version",
+                                    "value": "2017-10-01",
+                                    "description": "string The client API version.",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "description": "<a href='https://docs.microsoft.com/en-us/rest/api/power-bi-embedded/capacities/list'>List</a><br><p>Lists all the Dedicated capacities for the given subscription.</p>"
+                    },
+                    "response": [],
+                    "_link": "https://docs.microsoft.com/en-us/rest/api/power-bi-embedded/capacities/list"
+                },
+                {
+                    "name": "List By Resource Group",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "body": {},
+                        "url": {
+                            "raw": "https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.PowerBIDedicated/capacities?api-version=2017-10-01",
+                            "protocol": "https",
+                            "host": [
+                                "management",
+                                "azure",
+                                "com"
+                            ],
+                            "path": [
+                                "subscriptions",
+                                "{subscriptionId}",
+                                "resourceGroups",
+                                "{resourceGroupName}",
+                                "providers",
+                                "Microsoft.PowerBIDedicated",
+                                "capacities"
+                            ],
+                            "query": [
+                                {
+                                    "key": "api-version",
+                                    "value": "2017-10-01",
+                                    "description": "string The client API version.",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "description": "<a href='https://docs.microsoft.com/en-us/rest/api/power-bi-embedded/capacities/listbyresourcegroup'>List By Resource Group</a><br><p>Gets all the Dedicated capacities for the given resource group.</p>"
+                    },
+                    "response": [],
+                    "_link": "https://docs.microsoft.com/en-us/rest/api/power-bi-embedded/capacities/listbyresourcegroup"
+                },
+                {
+                    "name": "List Skus",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "body": {},
+                        "url": {
+                            "raw": "https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.PowerBIDedicated/skus?api-version=2017-10-01",
+                            "protocol": "https",
+                            "host": [
+                                "management",
+                                "azure",
+                                "com"
+                            ],
+                            "path": [
+                                "subscriptions",
+                                "{subscriptionId}",
+                                "providers",
+                                "Microsoft.PowerBIDedicated",
+                                "skus"
+                            ],
+                            "query": [
+                                {
+                                    "key": "api-version",
+                                    "value": "2017-10-01",
+                                    "description": "string The client API version.",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "description": "<a href='https://docs.microsoft.com/en-us/rest/api/power-bi-embedded/capacities/listskus'>List Skus</a><br><p>Lists eligible SKUs for PowerBI Dedicated resource provider.</p>"
+                    },
+                    "response": [],
+                    "_link": "https://docs.microsoft.com/en-us/rest/api/power-bi-embedded/capacities/listskus"
+                },
+                {
+                    "name": "List Skus For Capacity",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "body": {},
+                        "url": {
+                            "raw": "https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.PowerBIDedicated/capacities/{dedicatedCapacityName}/skus?api-version=2017-10-01",
+                            "protocol": "https",
+                            "host": [
+                                "management",
+                                "azure",
+                                "com"
+                            ],
+                            "path": [
+                                "subscriptions",
+                                "{subscriptionId}",
+                                "resourceGroups",
+                                "{resourceGroupName}",
+                                "providers",
+                                "Microsoft.PowerBIDedicated",
+                                "capacities",
+                                "{dedicatedCapacityName}",
+                                "skus"
+                            ],
+                            "query": [
+                                {
+                                    "key": "api-version",
+                                    "value": "2017-10-01",
+                                    "description": "string The client API version.",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "description": "<a href='https://docs.microsoft.com/en-us/rest/api/power-bi-embedded/capacities/listskusforcapacity'>List Skus For Capacity</a><br><p>Lists eligible SKUs for a PowerBI Dedicated resource.</p>"
+                    },
+                    "response": [],
+                    "_link": "https://docs.microsoft.com/en-us/rest/api/power-bi-embedded/capacities/listskusforcapacity"
+                },
+                {
+                    "name": "Resume",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {},
+                        "url": {
+                            "raw": "https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.PowerBIDedicated/capacities/{dedicatedCapacityName}/resume?api-version=2017-10-01",
+                            "protocol": "https",
+                            "host": [
+                                "management",
+                                "azure",
+                                "com"
+                            ],
+                            "path": [
+                                "subscriptions",
+                                "{subscriptionId}",
+                                "resourceGroups",
+                                "{resourceGroupName}",
+                                "providers",
+                                "Microsoft.PowerBIDedicated",
+                                "capacities",
+                                "{dedicatedCapacityName}",
+                                "resume"
+                            ],
+                            "query": [
+                                {
+                                    "key": "api-version",
+                                    "value": "2017-10-01",
+                                    "description": "string The client API version.",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "description": "<a href='https://docs.microsoft.com/en-us/rest/api/power-bi-embedded/capacities/resume'>Resume</a><br><p>Resumes operation of the specified Dedicated capacity instance.</p>"
+                    },
+                    "response": [],
+                    "_link": "https://docs.microsoft.com/en-us/rest/api/power-bi-embedded/capacities/resume"
+                },
+                {
+                    "name": "Suspend",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {},
+                        "url": {
+                            "raw": "https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.PowerBIDedicated/capacities/{dedicatedCapacityName}/suspend?api-version=2017-10-01",
+                            "protocol": "https",
+                            "host": [
+                                "management",
+                                "azure",
+                                "com"
+                            ],
+                            "path": [
+                                "subscriptions",
+                                "{subscriptionId}",
+                                "resourceGroups",
+                                "{resourceGroupName}",
+                                "providers",
+                                "Microsoft.PowerBIDedicated",
+                                "capacities",
+                                "{dedicatedCapacityName}",
+                                "suspend"
+                            ],
+                            "query": [
+                                {
+                                    "key": "api-version",
+                                    "value": "2017-10-01",
+                                    "description": "string The client API version.",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "description": "<a href='https://docs.microsoft.com/en-us/rest/api/power-bi-embedded/capacities/suspend'>Suspend</a><br><p>Suspends operation of the specified dedicated capacity instance.</p>"
+                    },
+                    "response": [],
+                    "_link": "https://docs.microsoft.com/en-us/rest/api/power-bi-embedded/capacities/suspend"
+                },
+                {
+                    "name": "Update",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "type": "text",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n\t\"properties.administration\": \"\",\n\t\"sku\": \"\",\n\t\"tags\": \"\"\n}"
+                        },
+                        "url": {
+                            "raw": "https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.PowerBIDedicated/capacities/{dedicatedCapacityName}?api-version=2017-10-01",
+                            "protocol": "https",
+                            "host": [
+                                "management",
+                                "azure",
+                                "com"
+                            ],
+                            "path": [
+                                "subscriptions",
+                                "{subscriptionId}",
+                                "resourceGroups",
+                                "{resourceGroupName}",
+                                "providers",
+                                "Microsoft.PowerBIDedicated",
+                                "capacities",
+                                "{dedicatedCapacityName}"
+                            ],
+                            "query": [
+                                {
+                                    "key": "api-version",
+                                    "value": "2017-10-01",
+                                    "description": "string The client API version.",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "description": "<a href='https://docs.microsoft.com/en-us/rest/api/power-bi-embedded/capacities/update'>Update</a><br><p>Updates the current state of the specified Dedicated capacity.</p>"
+                    },
+                    "response": [],
+                    "_link": "https://docs.microsoft.com/en-us/rest/api/power-bi-embedded/capacities/update"
+                }
+            ],
+            "description": "Provides operations for managing capacities for use with Power BI.\r\n\r\ncapacities",
+            "protocolProfileBehavior": {},
+            "_link": "https://docs.microsoft.com/en-us/rest/api/power-bi-embedded/capacities"
+        },
+        {
+            "name": "Operations",
+            "item": [
+                {
+                    "name": "List",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "body": {},
+                        "url": {
+                            "raw": "https://management.azure.com/providers/Microsoft.PowerBIDedicated/operations?api-version=2017-10-01",
+                            "protocol": "https",
+                            "host": [
+                                "management",
+                                "azure",
+                                "com"
+                            ],
+                            "path": [
+                                "providers",
+                                "Microsoft.PowerBIDedicated",
+                                "operations"
+                            ],
+                            "query": [
+                                {
+                                    "key": "api-version",
+                                    "value": "2017-10-01",
+                                    "description": "string The client API version.",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "description": "<a href='https://docs.microsoft.com/en-us/rest/api/power-bi-embedded/operations/list'>List</a><br><p>Lists all of the available PowerBIDedicated REST API operations.</p>"
+                    },
+                    "response": [],
+                    "_link": "https://docs.microsoft.com/en-us/rest/api/power-bi-embedded/operations/list"
+                }
+            ],
+            "description": "Indicates which operations can be performed by the Power BI Resource Provider.\r\n\r\noperations",
+            "protocolProfileBehavior": {},
+            "_link": "https://docs.microsoft.com/en-us/rest/api/power-bi-embedded/operations"
+        }
+    ],
+    "protocolProfileBehavior": {}
+}
