@@ -13,8 +13,7 @@ BASE_URL = 'https://docs.microsoft.com/en-us/rest/api/power-bi/'
 def parse_page(soup, url):
     query, body = [], {}
 
-    uri_parameters_table = soup.select_one('#uri-parameters + table')
-    if uri_parameters_table:
+    if uri_parameters_table := soup.select_one('#uri-parameters + table'):
         trs = uri_parameters_table.select('tr')
 
         name_index, in_index, required_index, type_index, description_index = 0, 1, 2, 3, 4
@@ -34,28 +33,28 @@ def parse_page(soup, url):
                 row = [re.sub(r'( )+', ' ', td.text.strip().replace('\r', ' ').replace('\t', ' ').replace('\n', ' ')) for td in tds]
                 if row[in_index] == 'path':
                     continue
-                else:   # query
-                    name = row[name_index]
-                    required = row[required_index]
-                    data_type = row[type_index]
-                    description = row[description_index]
-                    optional = '(Optional) ' if not required else ''
-                    query.append({
+                name = row[name_index]
+                required = row[required_index]
+                data_type = row[type_index]
+                description = row[description_index]
+                optional = '' if required else '(Optional) '
+                query.append(
+                    {
                         'key': name,
                         'value': None,
                         'description': f"{data_type} {optional}{description}",
-                        'disabled': True if not required else False
-                    })
+                        'disabled': not required,
+                    }
+                )
+
             else:
-                print(f"ELSE ?!?!?!?!")
+                print("ELSE ?!?!?!?!")
                 raise
 
-    items = [f"{item['key']}={item['value']}" for item in query]
-    if items:
+    if items := [f"{item['key']}={item['value']}" for item in query]:
         url += '?' + '&'.join(items)
 
-    request_body_table = soup.select_one('#request-body + table')
-    if request_body_table:
+    if request_body_table := soup.select_one('#request-body + table'):
         body['mode'] = 'raw'
         body['raw'] = ''
         body_raw_dict = {}
@@ -75,13 +74,11 @@ def parse_page(soup, url):
                     required_index = columns.index('Required')
                 except ValueError:
                     required_index = -1
-                    pass
-
             elif tds := tr.select('td'):
                 row = [td.text.strip() for td in tds]
                 body_raw_dict[row[name_index]] = ''
             else:
-                print(f"ELSE ?!?!?!?!")
+                print("ELSE ?!?!?!?!")
                 raise
 
         body['raw'] = json.dumps(body_raw_dict, indent='\t')
@@ -172,24 +169,29 @@ def main():
                     "value": "application/json"
                 })
 
-            operations.append({
-                'name': name,
-                "request": {
-                    "method": method,
-                    "header": headers,
-                    "body": body,
-                    "url": {
-                        "raw": url,
-                        "protocol": parsed_url.scheme,          # "https",
-                        "host": parsed_url.netloc.split('.'),   # ["api", "powerbi", "com"],
-                        "path": paths,                          # ["v1.0", "myorg", "groups"],
-                        "query": query
+            operations.append(
+                {
+                    'name': name,
+                    "request": {
+                        "method": method,
+                        "header": headers,
+                        "body": body,
+                        "url": {
+                            "raw": url,
+                            "protocol": parsed_url.scheme,  # "https",
+                            "host": parsed_url.netloc.split(
+                                '.'
+                            ),  # ["api", "powerbi", "com"],
+                            "path": paths,  # ["v1.0", "myorg", "groups"],
+                            "query": query,
+                        },
+                        "description": f'{description_title}<br>{description_html}',
                     },
-                    "description": description_title + '<br>' + description_html
-                },
-                "response": [],
-                '_link': full_href
-            })
+                    "response": [],
+                    '_link': full_href,
+                }
+            )
+
 
         lis[i]['item'] = operations
 
